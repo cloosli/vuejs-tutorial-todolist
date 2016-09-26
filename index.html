@@ -12,18 +12,18 @@
         <h1>Todos</h1>
         <ul v-show="showTodos">
             <li v-for="todo in todos">
-                {{ todo.title }}
+                <span>{{ todo.title }}</span><button type="button" v-on:click="removeTodo($index)">&#10005;</button>
             </li>
         </ul>
         <p v-else>
-          No Todos for you today
+            No Todos for you today
         </p>
         <p>
             Checked {{ showTodos }}
             <input type="checkbox" v-model="showTodos">
         </p>
         <p>
-          <input type="text" v-model="todoText" v-on:keyup.enter="createTodo" v-on:keyup.esc="clearTodo">
+            <input type="text" v-model="todoText" v-on:keyup.enter="createTodo" v-on:keyup.esc="clearTodo">
         </p>
     </div>
 

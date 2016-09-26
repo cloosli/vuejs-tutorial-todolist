@@ -3,12 +3,15 @@ new Vue({
     data: {
         message: 'Hello Vue.js!',
         todoText: '',
-        todos: [
-          { title: 'Learn Vue.js' },
-          { title: 'Learn Go' },
-          { title: 'Learn RethinkDB' },
-          { title: 'Build something awesome'}
-        ],
+        todos: [{
+            title: 'Learn Vue.js'
+        }, {
+            title: 'Learn Go'
+        }, {
+            title: 'Learn RethinkDB'
+        }, {
+            title: 'Build something awesome'
+        }],
         showTodos: true
     },
     methods: {
@@ -22,7 +25,10 @@ new Vue({
             }
         },
         clearTodo: function() {
-          this.todoText = '';
+            this.todoText = '';
+        },
+        removeTodo: function(index) {
+            this.todos.splice(index, 1);
         }
     }
 
