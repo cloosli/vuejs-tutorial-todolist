@@ -9,6 +9,19 @@
 <body>
     <div id="app">
         {{ message }}
+        <h1>Todos</h1>
+        <ul v-show="showTodos">
+            <li v-for="todo in todos">
+                {{ todo.title }}
+            </li>
+        </ul>
+        <p v-else>
+          No Todos for you today
+        </p>
+        <p>
+            Checked {{ showTodos }}
+            <input type="checkbox" v-model="showTodos">
+        </p>
     </div>
 
     <script type="text/javascript" src="js/vue.js"></script>
