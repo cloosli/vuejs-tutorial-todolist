@@ -2,14 +2,28 @@ new Vue({
     el: '#app',
     data: {
         message: 'Hello Vue.js!',
+        todoText: '',
         todos: [
-          {
-            title: 'Todo 1'
-        }, {
-            title: 'Todo 2'
-        }, {
-            title: 'Todo 3'
-        }],
-        showTodos:true
+          { title: 'Learn Vue.js' },
+          { title: 'Learn Go' },
+          { title: 'Learn RethinkDB' },
+          { title: 'Build something awesome'}
+        ],
+        showTodos: true
+    },
+    methods: {
+        createTodo: function() {
+            var todoText = this.todoText.trim();
+            if (todoText) {
+                this.todos.push({
+                    title: todoText
+                });
+                this.todoText = '';
+            }
+        },
+        clearTodo: function() {
+          this.todoText = '';
+        }
     }
+
 })
