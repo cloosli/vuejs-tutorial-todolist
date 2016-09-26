@@ -12,7 +12,7 @@
         <h1>Todos</h1>
         <ul v-show="showTodos">
             <li v-for="todo in todos">
-                <span>{{ todo.title }}</span><button type="button" v-on:click="removeTodo($index)">&#10005;</button>
+                <todo-component v-bind:todo="todo"></todo-component><button type="button" v-on:click="removeTodo($index)">&#10005;</button>
             </li>
         </ul>
         <p v-else>
